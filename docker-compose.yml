@@ -1,0 +1,26 @@
+version: '3'
+services:
+  calc:
+    build: ./calc
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+
+  string:
+    build: ./string
+    ports:
+      - "5001:5001"
+    networks:
+      - mynetwork
+
+  last:
+    build: ./last
+    ports:
+      - "5002:5002"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
